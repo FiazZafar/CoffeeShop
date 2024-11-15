@@ -21,7 +21,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_margin="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="20dp"
             android:background="@drawable/img_round"
 
             android:src="@drawable/baseline_arrow_back_24"/>
@@ -40,7 +41,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_margin="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="20dp"
             android:src="@android:drawable/presence_invisible"
             android:background="@android:color/transparent"
             />
@@ -63,6 +65,8 @@
         android:layout_below="@+id/relativelayout1S"
         android:layout_alignParentBottom="true"
         android:background="#EAE7E0"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
         tools:ignore="NotSibling">
 
         <TextView
@@ -108,7 +112,7 @@
                 android:id="@+id/seekBarValueMilk"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="milke:4%"
+                android:text="milke:0%"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
                 android:textSize="20dp"
@@ -142,7 +146,7 @@
                 android:id="@+id/seekBarValueShugar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Shugar:4%"
+                android:text="Shugar:0%"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
                 android:textSize="20dp"
@@ -269,11 +273,11 @@
             android:textSize="18sp"
             android:paddingTop="2dp"
             />
-        <Button
-            android:id="@+id/totalPriceHeading"
+        <TextView
+            android:id="@+id/cartBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Buy"
+            android:text="AddToCart"
             android:background="@android:color/transparent"
             android:textColor="@color/white"
             android:textStyle="bold"
