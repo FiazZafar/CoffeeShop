@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Chocolate"
+    tools:context=".SelectedItem">
+
+
+    <RelativeLayout
+        android:id="@+id/relativelayout1S"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+
+        android:background="@drawable/coffee_img"
+        >
+        <ImageButton
+            android:id="@+id/arrowBackBtnS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_margin="40dp"
+            android:background="@drawable/img_round"
+
+            android:src="@drawable/baseline_arrow_back_24"/>
+        <TextView
+            android:id="@+id/flavourNameS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FlavourName"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="40dp"/>
+        <ImageButton
+            android:id="@+id/fav_itemS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="40dp"
+            android:src="@android:drawable/presence_invisible"
+            android:background="@android:color/transparent"
+            />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/relativelayout1S"
+        android:paddingBottom="10dp"
+        android:layout_above="@+id/linaerLayoutThird"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="30dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/relativelayout1S"
+        android:layout_alignParentBottom="true"
+        android:background="#EAE7E0"
+        tools:ignore="NotSibling">
+
+        <TextView
+            android:id="@+id/ingredientHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ingredients"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            />
+        <RelativeLayout
+            android:id="@+id/relativelayout2S"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ingredientHeading"
+            android:visibility="visible"
+            >
+            <TextView
+                android:id="@+id/ingredientFirst"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Milk"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="30dp"
+                android:textColor="@color/Chocolate"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                />
+            <SeekBar
+                android:id="@+id/seekBarMilk"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_below="@+id/ingredientFirst"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:padding="10dp"
+                android:max="5"
+                android:background="@color/Chocolate"/>
+            <TextView
+                android:id="@+id/seekBarValueMilk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="milke:4%"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:layout_below="@+id/seekBarMilk"
+                />
+
+            <TextView
+                android:id="@+id/ingredientSecond"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shugar"
+                android:layout_below="@+id/seekBarValueMilk"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="30dp"
+                android:textColor="@color/Chocolate"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                />
+            <SeekBar
+                android:id="@+id/seekBarShugar"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_below="@+id/ingredientSecond"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:padding="10dp"
+                android:max="5"
+                android:background="@color/Chocolate"/>
+            <TextView
+                android:id="@+id/seekBarValueShugar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shugar:4%"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:layout_below="@+id/seekBarShugar"
+                />
+        </RelativeLayout>
+        <LinearLayout
+            android:id="@+id/LinearLayoutfisrt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/relativelayout2S"
+            android:layout_marginTop="10dp"
+            >
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/smallBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Small"
+                android:layout_weight="1"
+                android:textAllCaps="false"
+                android:background="@drawable/size_btn_shape"
+                android:textColor="@color/white"
+                android:layout_margin="10dp"/>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/mediumBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Medium"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                android:textAllCaps="false"
+                android:background="@drawable/size_btn_shape"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/largeBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Large"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                android:textAllCaps="false"
+                android:background="@drawable/size_btn_shape"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linaerLayoutSecond"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/LinearLayoutfisrt"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            >
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/minusQuantityBtn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:text="-"
+                android:textStyle="bold"
+                android:textSize="20dp"
+
+                android:background="@drawable/quantity_bg"
+                android:layout_weight="1"
+                android:textAllCaps="false"
+                android:textColor="@color/Chocolate"
+                android:layout_margin="10dp"/>
+            <TextView
+                android:id="@+id/totalQuantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/addQuantityBtn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:text="+"
+                android:background="@drawable/quantity_bg"
+                android:textSize="20dp"
+                android:layout_weight="1"
+                android:textAllCaps="false"
+                android:textColor="@color/Chocolate"
+                android:layout_margin="10dp"/>
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/linaerLayoutThird"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/total_price_shape"
+        android:orientation="vertical"
+        android:padding="0dp"
+        android:gravity="center"
+        >
+        <TextView
+            android:id="@+id/totalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$ 2.50"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:paddingTop="2dp"
+            />
+        <Button
+            android:id="@+id/totalPriceHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Buy"
+            android:background="@android:color/transparent"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>
