@@ -3,13 +3,13 @@ package com.example.coffeetaste;
 public class CoffeeModel {
 
     int img;
-    String itemNam;
+    String itemName;
     String itemGridients;
     float totalRating;
     float price;
     public CoffeeModel(int img, String itemName, String itemGridients, float totalRating,float price) {
         this.img = img;
-        this.itemNam = itemName;
+        this.itemName = itemName;
         this.itemGridients = itemGridients;
         this.totalRating = totalRating;
         this.price = price;
@@ -24,11 +24,11 @@ public class CoffeeModel {
     }
 
     public String getItemName() {
-        return itemNam;
+        return itemName;
     }
 
     public void setItemName(String itemName) {
-        this.itemNam = itemName;
+        this.itemName = itemName;
     }
 
     public String getItemGridients() {

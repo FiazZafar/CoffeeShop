@@ -36,16 +36,16 @@ public class SelectedItem extends AppCompatActivity {
 
 
 
-        Intent intent = new Intent();
+        Intent intent = getIntent();
       int imgRes =intent.getIntExtra("imgRes",-1);
       String itemName = intent.getStringExtra("itemHead");
       String itemGrad = intent.getStringExtra("itemGrad");
       float price = intent.getFloatExtra("price",-2);
 
 
-        System.out.println(itemName + itemGrad);
 
-      itemNames.setText(itemGrad);
+
+      itemNames.setText(itemName);
 
         seekBarMilk.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
