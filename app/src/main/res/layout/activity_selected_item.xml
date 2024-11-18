@@ -13,7 +13,6 @@
         android:id="@+id/relativelayout1S"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-
         android:background="@drawable/coffee_img"
         >
         <ImageButton
@@ -43,8 +42,9 @@
             android:layout_alignParentEnd="true"
             android:layout_marginTop="40dp"
             android:layout_marginEnd="20dp"
-            android:src="@android:drawable/presence_invisible"
+            android:src="@drawable/fav_item"
             android:background="@android:color/transparent"
+
             />
     </RelativeLayout>
 
@@ -68,7 +68,6 @@
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         tools:ignore="NotSibling">
-
         <TextView
             android:id="@+id/ingredientHeading"
             android:layout_width="wrap_content"
@@ -112,7 +111,7 @@
                 android:id="@+id/seekBarValueMilk"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="milke:0%"
+                android:text="Milk:0%"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
                 android:textSize="20dp"
@@ -259,8 +258,9 @@
         android:layout_alignParentBottom="true"
         android:background="@drawable/total_price_shape"
         android:orientation="vertical"
-        android:padding="0dp"
+        android:paddingTop="10dp"
         android:gravity="center"
+        android:paddingBottom="20dp"
         >
         <TextView
             android:id="@+id/totalPrice"
@@ -269,9 +269,11 @@
             android:text="$ 2.50"
             android:layout_marginTop="5dp"
             android:textColor="@color/white"
+
             android:textStyle="bold"
             android:textSize="18sp"
-            android:paddingTop="2dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
             />
         <TextView
             android:id="@+id/cartBtn"
