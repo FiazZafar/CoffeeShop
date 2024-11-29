@@ -6,8 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/Porcelain"
+    android:fitsSystemWindows="true"
     android:orientation="vertical"
     tools:context=".HomeScreen">
+
 
     <TextView
         android:id="@+id/homeScreenHd"
@@ -18,6 +20,7 @@
         android:textSize="20sp"
         android:textColor="@color/Black"
         android:layout_centerHorizontal="true"
+
         android:padding="40sp"
         />
     <TextView
@@ -29,7 +32,7 @@
 
         android:textStyle="italic"
         android:textSize="15sp"
-        android:textColor="@color/RoseTaupe"
+        android:textColor="@color/Bunting"
         android:paddingLeft="40sp"
         />
     <TextView
@@ -50,10 +53,25 @@
         android:layout_below="@+id/usernameTxt"
         android:background="@drawable/item_bg_shape"
         android:layout_marginTop="30dp"
-        android:paddingBottom="20dp"
-/>
+        android:paddingBottom="10dp"
+    />
 
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="start"
+            android:background="@drawable/botm_nav_shape"
+            app:itemTextColor="@color/white"
+            app:itemIconTint="@color/white"
+            app:itemRippleColor="@color/Chocolate"
+            app:menu="@menu/bottom_menu"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:layout_marginBottom="-55dp"
+            android:fitsSystemWindows="true"
+            app:itemTextAppearanceActive="@style/BottomNavLabelStyle"
+            app:itemTextAppearanceInactive="@style/BottomNavLabelStyle" />
 
-
-
-</RelativeLayout>
+  </RelativeLayout>

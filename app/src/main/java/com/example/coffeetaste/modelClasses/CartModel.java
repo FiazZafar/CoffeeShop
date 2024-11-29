@@ -1,4 +1,4 @@
-package com.example.coffeetaste;
+package com.example.coffeetaste.modelClasses;
 
 public class CartModel {
     int imgRes;

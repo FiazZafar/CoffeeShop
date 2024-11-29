@@ -1,8 +1,5 @@
 package com.example.coffeetaste;
 
-import static android.content.Intent.getIntent;
-import static android.content.Intent.getIntentOld;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -16,6 +13,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.coffeetaste.modelClasses.CartModel;
 
 import java.util.ArrayList;
 
@@ -37,7 +36,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         CartModel itemPosition = arrayList.get(position);
-        Log.d("CartAdapter", "Binding position: " + position);
+        Log.d("CartAdapter", "Binding position: " + itemPosition);
 
         if (holder.itemImage != null) {
             holder.itemImage.setImageResource(itemPosition.getImgRes());
@@ -64,13 +63,13 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
         }else {
             Log.e("CartAdapter","ItemQuantity TextView is null");
         }
-        holder.itemIngradient.setText(String.valueOf("with milk " + itemPosition.ingredient1 + "%,\n with shugar " + itemPosition.ingredient2  + "%"));
+        holder.itemIngradient.setText(String.valueOf("with milk " + itemPosition.getIngredient1() + "%,\n with shugar " + itemPosition.getIngredient2()  + "%"));
         holder.editbuton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 int currentImage = itemPosition.getImgRes();
                 String itemName = itemPosition.getItemName();
-                float price = itemPosition.basicPrice;
+                float price = itemPosition.getBasicPrice();
 //                int quantity = itemPosition.getQuantity();
                 int itemPosition = position;
                 int flag = 1;

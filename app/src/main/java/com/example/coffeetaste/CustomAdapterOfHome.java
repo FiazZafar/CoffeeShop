@@ -13,6 +13,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.coffeetaste.modelClasses.CoffeeModel;
+
 import java.util.ArrayList;
 
 public class CustomAdapterOfHome extends RecyclerView.Adapter<CustomAdapterOfHome.ItemView> {
@@ -36,7 +38,7 @@ public class CustomAdapterOfHome extends RecyclerView.Adapter<CustomAdapterOfHom
     public void onBindViewHolder(@NonNull ItemView holder, int position) {
 
         CoffeeModel coffeeModel = coffeeModelArrayList.get(position);
-        holder.itemPrice.setText("$ " + String.valueOf(coffeeModel.price));
+        holder.itemPrice.setText("$ " + String.valueOf(coffeeModel.getPrice()));
         if (holder.itemImg != null){
             holder.itemImg.setImageResource(coffeeModel.getImg());
         }else {
@@ -63,10 +65,10 @@ public class CustomAdapterOfHome extends RecyclerView.Adapter<CustomAdapterOfHom
             public void onClick(View view) {
                 // Ensure coffeeModel is not null before accessing its fields
                 if (coffeeModel != null) {
-                    int imgResource = coffeeModel.img;
-                    String itemHead = coffeeModel.itemName;
-                    String itemGrad = coffeeModel.itemGridients;
-                    float price = coffeeModel.price;
+                    int imgResource = coffeeModel.getImg();
+                    String itemHead = coffeeModel.getItemName();
+                    String itemGrad = coffeeModel.getItemGridients();
+                    float price = coffeeModel.getPrice();
 
                     Intent intent = new Intent(context, SelectedItem.class);
 

@@ -13,17 +13,17 @@
         android:theme="@style/Theme.CoffeeTaste"
         tools:targetApi="31">
         <activity
+            android:name=".FavouriteItems"
+            android:exported="false" />
+        <activity
             android:name=".AddToCard"
-            android:exported="false"/>
-
+            android:exported="false" />
         <activity
             android:name=".SelectedItem"
-            android:exported="false"/>
-
+            android:exported="false" />
         <activity
             android:name=".HomeScreen"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
