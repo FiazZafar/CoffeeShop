@@ -1,4 +1,4 @@
-package com.example.coffeetaste;
+package com.example.coffeetaste.adapters;
 
 import android.app.Activity;
 import android.content.Context;
@@ -14,6 +14,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.coffeetaste.R;
+import com.example.coffeetaste.SelectedItem;
 import com.example.coffeetaste.modelClasses.CartModel;
 
 import java.util.ArrayList;
@@ -21,7 +23,7 @@ import java.util.ArrayList;
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
     Context context;
     ArrayList<CartModel> arrayList;
-    CartAdapter(ArrayList<CartModel> arrayList, Context context){
+   public CartAdapter(ArrayList<CartModel> arrayList, Context context){
         this.arrayList = arrayList;
         this.context = context;
     }

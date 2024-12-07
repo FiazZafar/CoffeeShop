@@ -1,8 +1,21 @@
 package com.example.coffeetaste.modelClasses;
 
 public class CartModel {
+    public int getItemId() {
+        return itemId;
+    }
+
+    public void setItemId(int itemId) {
+        this.itemId = itemId;
+    }
+
+    int itemId;
     int imgRes;
     String itemName;
+
+    public CartModel() {
+    }
+
     int ingredient1;
     int ingredient2;
     float price;

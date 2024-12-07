@@ -16,6 +16,8 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.coffeetaste.DataBase.Tables.MyDbHelper;
+import com.example.coffeetaste.adapters.CartAdapter;
 import com.example.coffeetaste.modelClasses.CartModel;
 
 import java.text.DecimalFormat;
@@ -31,9 +33,8 @@ public class AddToCard extends AppCompatActivity {
             ,taxAmount=0
             ,totalPrice=0;
 Button orderBtn;
-
-
-   static ArrayList<CartModel> cartModels = new ArrayList<>();
+    ArrayList<CartModel> cartModelArrayList;
+    MyDbHelper dbHelper = new MyDbHelper(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,29 +49,8 @@ Button orderBtn;
         intializer();
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        Intent intent = getIntent();
-        int imgRes = intent.getIntExtra("itemImage", 0);
-        String itemName = intent.getStringExtra("itemName");
-        int ingradient1 = intent.getIntExtra("itemIngradient1", 0);
-        int ingradient2 = intent.getIntExtra("itemIngradient2", 0);
-        float price = intent.getFloatExtra("totalPrice", 0);
-        int itemQuantity = intent.getIntExtra("itemQuantity", 0);
-        float basicPrice = intent.getFloatExtra("basicPrice", 0);
-        int position = intent.getIntExtra("itemPosition", 0);
-        int flag = intent.getIntExtra("flag", 0);
 
-        if (itemName == null) {
-            Toast.makeText(this, "ItemName is null", Toast.LENGTH_SHORT).show();
-        } else if (imgRes == 0) {
-            Toast.makeText(this, "ImageResource is not accessible", Toast.LENGTH_SHORT).show();
-        } else if (price < 0) {
-            Toast.makeText(this, "Invalid prices", Toast.LENGTH_SHORT).show();
-        } else if (flag == 1) {
-                cartModels.set(position, new CartModel(imgRes, itemName, price, ingradient1, ingradient2, itemQuantity, basicPrice));
-        } else {
-            cartModels.add(new CartModel(imgRes, itemName, price, ingradient1, ingradient2, itemQuantity, basicPrice));
-        }
-
+          cartModelArrayList = dbHelper.fetchCartItemData();
         backCartBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -79,14 +59,14 @@ Button orderBtn;
                 finish();
             }
         });
-        CartAdapter cartAdapter = new CartAdapter(cartModels,AddToCard.this);
+        CartAdapter cartAdapter = new CartAdapter(cartModelArrayList,AddToCard.this);
         recyclerView.setAdapter(cartAdapter);
 
         orderBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(AddToCard.this, "Order Done", Toast.LENGTH_SHORT).show();
-                cartModels.clear();
+                cartModelArrayList.clear();
                 subtotalPrice.setText("$ 0");
                 shopCoast.setText("$ 0");
                 taxRate.setText("$ 0");
@@ -102,8 +82,8 @@ Button orderBtn;
     }
 
     private void totalPriceCalculater() {
-        for (int i = 0; i < cartModels.size(); i++) {
-          float currentItemPrice = cartModels.get(i).getPrice();
+        for (int i = 0; i < cartModelArrayList.size(); i++) {
+          float currentItemPrice = cartModelArrayList.get(i).getPrice();
           shopCoaste =shopCoaste + currentItemPrice * 8/100;
           taxAmount = taxAmount + currentItemPrice * 10/100;
             itemPrices = itemPrices + currentItemPrice;

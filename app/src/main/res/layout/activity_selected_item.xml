@@ -256,7 +256,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/total_price_shape"
+        android:background="@drawable/add_to_cart_price_bg"
         android:orientation="vertical"
         android:paddingTop="10dp"
         android:gravity="center"

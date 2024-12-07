@@ -20,6 +20,9 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.coffeetaste.DataBase.Tables.MyDbHelper;
+import com.example.coffeetaste.modelClasses.CartModel;
+
 import java.text.DecimalFormat;
 
 public class SelectedItem extends AppCompatActivity {
@@ -37,7 +40,10 @@ public class SelectedItem extends AppCompatActivity {
     int flag,itemPosition;
     DecimalFormat df = new DecimalFormat("#.##");
     RelativeLayout relativeLayout ;
-    @SuppressLint("MissingInflatedId")
+
+    MyDbHelper dbHelper = new MyDbHelper(this);
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +55,10 @@ public class SelectedItem extends AppCompatActivity {
             return insets;
         });
 
+
+
       initialzers();
+
 
       relativeLayout = findViewById(R.id.relativelayout1S);
 
@@ -96,16 +105,8 @@ public class SelectedItem extends AppCompatActivity {
                         Toast.makeText(SelectedItem.this, "Select size first", Toast.LENGTH_SHORT).show();
                         Log.w("SelectedItem", "Current price is less than 1");
                     } else {
+                        dbHelper.insertCarted(new CartModel(imgRes, itName,totalAmount,milkQuanity,shugarQuantity,quantity,price));
                         Intent intent = new Intent(SelectedItem.this, AddToCard.class);
-                        intent.putExtra("itemName", itName);              // Pass item name
-                        intent.putExtra("itemImage", imgRes);
-                        intent.putExtra("itemIngradient1", milkQuanity);    // Pass milk quantity
-                        intent.putExtra("itemIngradient2", shugarQuantity); // Pass sugar quantity
-                        intent.putExtra("totalPrice", totalAmount); // Pass total price
-                        intent.putExtra("itemQuantity", quantity);// Pass quantity
-                        intent.putExtra("basicPrice", price);
-                        intent.putExtra("flag",flag);
-                        intent.putExtra("itemPosition",itemPosition);
                         startActivity(intent);
                         finish();
                     }

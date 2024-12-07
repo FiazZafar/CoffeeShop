@@ -51,9 +51,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/usernameTxt"
+        android:layout_above="@+id/navigation"
         android:background="@drawable/item_bg_shape"
         android:layout_marginTop="30dp"
-        android:paddingBottom="10dp"
+        android:paddingBottom="15dp"
     />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -62,16 +63,13 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_gravity="start"
-            android:background="@drawable/botm_nav_shape"
+            android:background="@color/Bunting"
             app:itemTextColor="@color/white"
             app:itemIconTint="@color/white"
-            app:itemRippleColor="@color/Chocolate"
-            app:menu="@menu/bottom_menu"
+            app:menu="@menu/bottom_nav_menu"
             android:paddingStart="5dp"
             android:paddingEnd="5dp"
             android:layout_marginBottom="-55dp"
-            android:fitsSystemWindows="true"
-            app:itemTextAppearanceActive="@style/BottomNavLabelStyle"
-            app:itemTextAppearanceInactive="@style/BottomNavLabelStyle" />
-
+            android:visibility="gone"
+/>
   </RelativeLayout>
